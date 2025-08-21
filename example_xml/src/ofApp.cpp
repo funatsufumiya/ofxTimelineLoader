@@ -7,7 +7,6 @@
 void ofApp::setup(){
     gui.setup();
 
-    // --- XML文字列（本来はファイルから読む） ---
     std::string xml_x = R"(<keyframes>
     <key>
         <easefunc>0</easefunc>
@@ -105,24 +104,20 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    // 描画パラメータ
     float length = 400.0f;
     float height = 100.0f;
     float x = timelineData.x * length - length / 2.0f + ofGetWidth() / 2.0f;
     float y = timelineData.y * height + ofGetHeight() / 2.0f;
 
-    // ベースライン
     float ny = ofGetHeight() / 2.0f - 60.0f;
     ofSetColor(ofColor::green);
     ofDrawLine(ofGetWidth() / 2.0f - length / 2.0f, ny, ofGetWidth() / 2.0f + length / 2.0f, ny);
     ofDrawLine(ofGetWidth() / 2.0f - length / 2.0f, ny - 10.0f, ofGetWidth() / 2.0f - length / 2.0f, ny + 10.0f);
     ofDrawLine(ofGetWidth() / 2.0f + length / 2.0f, ny - 10.0f, ofGetWidth() / 2.0f + length / 2.0f, ny + 10.0f);
 
-    // 円
     ofSetColor(ofColor::red);
     ofDrawCircle(x, y, 30.0f);
 
-    // ImGui
     gui.begin();
     if(ImGui::Begin("Easing")){
         ImGui::SliderFloat("t", &timelineData.t, 0.0f, float(timelineData.timeline->get_max_duration().count()) / 1000.0f);
