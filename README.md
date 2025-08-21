@@ -23,7 +23,9 @@ NOTE: This is just ofxEasing tester, but useful.
 
 ### [Timeline Simple](./example_simple/src/ofApp.cpp)
 
-Timeline constructing by script.
+Timeline constructing by script. 
+
+If you want to use this addon as a standalone lib without ofxTimeline data, this example would be helpful.
 
 ![screenshot_example_simple](docs/screenshot_example_simple.png)
 
