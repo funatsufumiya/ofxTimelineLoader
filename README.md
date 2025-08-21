@@ -4,6 +4,8 @@ Data loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTime
 
 (C++/oF port of [timeline_rs](https://github.com/funatsufumiya/timeline_rs))
 
+Tested with oF v0.12.0.
+
 ### ofxTimeline as an timeline editor (option)
 
 - For easy use of ofxTimeline as an editor, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D, even without oF.
