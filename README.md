@@ -1,6 +1,6 @@
 # ofxTimelineLoader
 
-Loader for ofxTimeline but also provide scriptable interface
+Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline) / [my fork](https://github.com/funatsufumiya/ofxTimeline) ) but also provide scriptable interface
 
 (C++/oF port of [timeline_rs](https://github.com/funatsufumiya/timeline_rs))
 
