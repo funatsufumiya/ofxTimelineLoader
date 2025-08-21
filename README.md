@@ -37,6 +37,10 @@ tx.keyframes.push_back({std::chrono::milliseconds(0), 0.0f, ofxeasing::Function:
 tx.keyframes.push_back({std::chrono::milliseconds(1000), 1.0f, ofxeasing::Function::Cubic, ofxeasing::Type::Out});
 tx.keyframes.push_back({std::chrono::milliseconds(2000), 0.0f, ofxeasing::Function::Cubic, ofxeasing::Type::In});
 timeline->add<float>("x", tx);
+
+// ...
+
+x = timelineData.timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms))
 ```
 
 ### [Timeline From XML](./example_xml/src/ofApp.cpp)
