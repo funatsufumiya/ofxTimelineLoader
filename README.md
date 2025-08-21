@@ -1,10 +1,10 @@
 # ofxTimelineLoader
 
-Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline) / [my fork](https://github.com/funatsufumiya/ofxTimeline) ) but also provide scriptable interface. This addon works without ofxTimeline. Using ofxTimeline as an timeline editor is option.
+Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline) / [my fork](https://github.com/funatsufumiya/ofxTimeline) ) but also provide scriptable interface. This addon works without ofxTimeline. Using ofxTimeline as an timeline editor is an **option**.
 
 (C++/oF port of [timeline_rs](https://github.com/funatsufumiya/timeline_rs))
 
-### NOTE: ofxTimeline as an timeline editor
+### ofxTimeline as an timeline editor (option)
 
 - For easy use of ofxTimeline as an editor, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D, even without oF.
 
