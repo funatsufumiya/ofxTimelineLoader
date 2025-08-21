@@ -11,7 +11,7 @@ Data loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTime
 ## Dependencies
 
 - ofxEasing: https://github.com/arturoc/ofxEasing/
-    - NOTE: this makes problems on windows build, so please use https://github.com/funatsufumiya/ofxEasing/ instead on windows.
+    - NOTE: this makes problems on windows build now, so please use https://github.com/funatsufumiya/ofxEasing/ instead on windows.
 
 ## Examples
 
