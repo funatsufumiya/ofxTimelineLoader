@@ -1,6 +1,6 @@
 # ofxTimelineLoader
 
-Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline) / [my fork](https://github.com/funatsufumiya/ofxTimeline) ) but also provide scriptable interface. This addon works without ofxTimeline. Using ofxTimeline as an timeline editor is an **option**.
+Data loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline) / [my fork](https://github.com/funatsufumiya/ofxTimeline) ) but also provide scriptable interface. This addon works without ofxTimeline. Using ofxTimeline as an timeline editor is an **option**.
 
 (C++/oF port of [timeline_rs](https://github.com/funatsufumiya/timeline_rs))
 
