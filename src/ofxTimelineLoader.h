@@ -13,6 +13,9 @@
 #include <vector>
 #include <chrono>
 #include <memory>
+#include <algorithm>
+
+#define TL_USE_LOWER_BOUND
 
 namespace ofxTimelineLoader {
 
@@ -34,8 +37,33 @@ public:
     T get_value(Duration time) const {
         if (keyframes.empty()) throw std::runtime_error("No keyframes");
         if (keyframes.size() == 1) return keyframes[0].value;
-
+    
         // Find prev/next keyframes
+
+#ifdef TL_USE_LOWER_BOUND
+        // binary search
+
+        auto it = std::lower_bound(
+            keyframes.begin(), keyframes.end(), time,
+            [](const Keyframe<T>& kf, const Duration& t) {
+                return kf.time < t;
+            }
+        );
+
+        const Keyframe<T>* prev = nullptr;
+        const Keyframe<T>* next = nullptr;
+
+        if (it == keyframes.begin()) {
+            return keyframes.front().value;
+        } else if (it == keyframes.end()) {
+            return keyframes.back().value;
+        } else {
+            next = &(*it);
+            prev = &(*(it - 1));
+        }
+#else
+        // linear search
+
         const Keyframe<T>* prev = nullptr;
         const Keyframe<T>* next = nullptr;
         for (const auto& kf : keyframes) {
@@ -47,6 +75,7 @@ public:
         }
         if (!prev) return keyframes.front().value;
         if (!next) return keyframes.back().value;
+#endif
 
         float t = float((time - prev->time).count());
         float d = float((next->time - prev->time).count());
