@@ -29,6 +29,16 @@ If you want to use this addon as a standalone lib ***without ofxTimeline data***
 
 ![screenshot_example_simple](docs/screenshot_example_simple.png)
 
+```cpp
+timeline = std::make_shared<Timeline>();
+
+Track<float> tx;
+tx.keyframes.push_back({std::chrono::milliseconds(0), 0.0f, ofxeasing::Function::Cubic, ofxeasing::Type::In});
+tx.keyframes.push_back({std::chrono::milliseconds(1000), 1.0f, ofxeasing::Function::Cubic, ofxeasing::Type::Out});
+tx.keyframes.push_back({std::chrono::milliseconds(2000), 0.0f, ofxeasing::Function::Cubic, ofxeasing::Type::In});
+timeline->add<float>("x", tx);
+```
+
 ### [Timeline From XML](./example_xml/src/ofApp.cpp)
 
 XML parsing example
