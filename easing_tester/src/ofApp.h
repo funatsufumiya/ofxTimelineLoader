@@ -23,4 +23,10 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		ofxImGui::Gui gui;
+
+		float t = 0.0f, v = 0.0f;
+		bool goAndBack = false;
+		int easingFuncIdx = 0, easingTypeIdx = 0;
+		vector<std::string> funcNames;
+		vector<std::string> typeNames;
 };
