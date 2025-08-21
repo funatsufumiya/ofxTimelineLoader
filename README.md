@@ -30,6 +30,7 @@ If you want to use this addon as a standalone lib ***without ofxTimeline data***
 ![screenshot_example_simple](docs/screenshot_example_simple.png)
 
 ```cpp
+using namespace ofxTimelineLoader;
 timeline = std::make_shared<Timeline>();
 
 Track<float> tx;
@@ -48,6 +49,31 @@ x = timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms))
 XML parsing example
 
 ![screenshot_example_simple](docs/screenshot_example_simple.png)
+
+```cpp
+std::string xml_x = R"(<keyframes>
+<key>
+    <easefunc>0</easefunc>
+    <easetype>0</easetype>
+    <time>00:00:00:524</time>
+    <value>0.375000000</value>
+</key>
+<key>
+    <easefunc>4</easefunc>
+    <easetype>0</easetype>
+    <time>00:00:02:123</time>
+    <value>0.330175757</value>
+</key>
+</keyframes>)";
+
+using namespace ofxTimelineLoader;
+timeline = std::make_shared<Timeline>();
+timeline->add<float>("x", track_from_xml<float>(xml_x));
+
+// ...
+
+x = timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms));
+```
 
 ## Dev notes
 
