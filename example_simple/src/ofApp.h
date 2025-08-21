@@ -25,9 +25,9 @@ public:
 
 	ofxImGui::Gui gui;
 
-	// --- Timeline simple example data ---
 	struct TimelineData {
 		std::shared_ptr<ofxTimelineLoader::Timeline> timeline;
+		// for imgui
 		float t = 0.0f;
 		float x = 0.0f;
 		float y = 0.0f;
