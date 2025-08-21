@@ -8,3 +8,7 @@ Loader for ofxTimeline but also provide scriptable interface
 
 - ofxEasing: https://github.com/arturoc/ofxEasing/
     - NOTE: this makes problems on windows build, so please use https://github.com/funatsufumiya/ofxEasing/ instead on windows.
+
+## Notes
+
+- Easy use of ofxTimeline, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D.
