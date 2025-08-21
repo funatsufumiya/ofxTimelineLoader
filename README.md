@@ -15,19 +15,19 @@ Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline)
 
 ## Examples
 
-### [Easing Tester](./easing_tester/)
+### [Easing Tester](./easing_tester/src/ofApp.cpp)
 
 NOTE: This is just ofxEasing tester, but useful.
 
 ![screenshot_easing_tester](docs/screenshot_easing_tester.png)
 
-### [Timeline Simple](./example_simple/)
+### [Timeline Simple](./example_simple/src/ofApp.cpp)
 
 Timeline constructing by script.
 
 ![screenshot_example_simple](docs/screenshot_example_simple.png)
 
-### [Timeline From XML](./example_xml/)
+### [Timeline From XML](./example_xml/src/ofApp.cpp)
 
 XML parsing example
 
