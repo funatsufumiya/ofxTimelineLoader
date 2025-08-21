@@ -4,6 +4,10 @@ Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline)
 
 (C++/oF port of [timeline_rs](https://github.com/funatsufumiya/timeline_rs))
 
+### NOTE: ofxTimeline as an timeline editor
+
+- For easy use of ofxTimeline as an editor, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D, even without oF.
+
 ## Dependencies
 
 - ofxEasing: https://github.com/arturoc/ofxEasing/
@@ -28,10 +32,6 @@ Timeline constructing by script.
 XML parsing example
 
 ![screenshot_example_simple](docs/screenshot_example_simple.png)
-
-## Notes
-
-- Easy use of ofxTimeline, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D, even without oF.
 
 ## Dev notes
 
