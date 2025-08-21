@@ -67,6 +67,8 @@ void ofApp::draw(){
 
     gui.begin();
     if(ImGui::Begin("Easing")){
+        ImGui::SliderFloat("t", &timelineData.t, 0.0f, float(timelineData.timeline->get_max_duration().count()) / 1000.0f);
+        ImGui::SliderFloat("x", &timelineData.x, 0.0f, 1.0f);
         ImGui::SliderFloat("y", &timelineData.y, 0.0f, 1.0f);
         ImGui::Checkbox("looped", &timelineData.looped);
     }
