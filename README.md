@@ -75,6 +75,8 @@ timeline->add<float>("x", track_from_xml<float>(xml_x));
 x = timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms));
 ```
 
+NOTE: You can also parse JSON using `track_from_json(const ofJson& json)`.
+
 ## Dev notes
 
 - Portation from [timeline_rs](https://github.com/funatsufumiya/timeline_rs) was mostly done with GitHub Copilot. Already tested, but use with care.
