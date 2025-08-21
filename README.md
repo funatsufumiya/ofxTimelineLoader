@@ -40,7 +40,7 @@ timeline->add<float>("x", tx);
 
 // ...
 
-x = timelineData.timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms))
+x = timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms))
 ```
 
 ### [Timeline From XML](./example_xml/src/ofApp.cpp)
