@@ -74,31 +74,26 @@ void ofApp::setup(){
 </keyframes>)";
 
     using namespace ofxTimelineLoader;
-    timelineData.timeline = std::make_shared<Timeline>();
-    timelineData.timeline->add<float>("x", track_from_xml<float>(xml_x));
-    timelineData.timeline->add<float>("y", track_from_xml<float>(xml_y));
-
-    timelineData.t = 0.0f;
-    timelineData.x = 0.0f;
-    timelineData.y = 0.0f;
-    timelineData.looped = true;
+    timeline = std::make_shared<Timeline>();
+    timeline->add<float>("x", track_from_xml<float>(xml_x));
+    timeline->add<float>("y", track_from_xml<float>(xml_y));
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    if (!timelineData.timeline) return;
-    float maxDuration = float(timelineData.timeline->get_max_duration().count()) / 1000.0f;
-    timelineData.t += ofGetLastFrameTime();
-    if (timelineData.looped && timelineData.t > maxDuration) {
-        timelineData.t = 0.0f;
+    if (!timeline) return;
+    float maxDuration = float(timeline->get_max_duration().count()) / 1000.0f;
+    t += ofGetLastFrameTime();
+    if (looped && t > maxDuration) {
+        t = 0.0f;
     }
-    float t_ms = timelineData.t * 1000.0f;
+    float t_ms = t * 1000.0f;
     try {
-        timelineData.x = timelineData.timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms));
-        timelineData.y = timelineData.timeline->get_value<float>("y", std::chrono::milliseconds((int)t_ms));
+        x = timeline->get_value<float>("x", std::chrono::milliseconds((int)t_ms));
+        y = timeline->get_value<float>("y", std::chrono::milliseconds((int)t_ms));
     } catch (...) {
-        timelineData.x = 0.0f;
-        timelineData.y = 0.0f;
+        x = 0.0f;
+        y = 0.0f;
     }
 }
 
@@ -106,8 +101,8 @@ void ofApp::update(){
 void ofApp::draw(){
     float length = 400.0f;
     float height = 100.0f;
-    float x = timelineData.x * length - length / 2.0f + ofGetWidth() / 2.0f;
-    float y = timelineData.y * height + ofGetHeight() / 2.0f;
+    float _x = x * length - length / 2.0f + ofGetWidth() / 2.0f;
+    float _y = y * height + ofGetHeight() / 2.0f;
 
     float ny = ofGetHeight() / 2.0f - 60.0f;
     ofSetColor(ofColor::green);
@@ -116,14 +111,14 @@ void ofApp::draw(){
     ofDrawLine(ofGetWidth() / 2.0f + length / 2.0f, ny - 10.0f, ofGetWidth() / 2.0f + length / 2.0f, ny + 10.0f);
 
     ofSetColor(ofColor::red);
-    ofDrawCircle(x, y, 30.0f);
+    ofDrawCircle(_x, _y, 30.0f);
 
     gui.begin();
     if(ImGui::Begin("Easing")){
-        ImGui::SliderFloat("t", &timelineData.t, 0.0f, float(timelineData.timeline->get_max_duration().count()) / 1000.0f);
-        ImGui::SliderFloat("x", &timelineData.x, 0.0f, 1.0f);
-        ImGui::SliderFloat("y", &timelineData.y, 0.0f, 1.0f);
-        ImGui::Checkbox("looped", &timelineData.looped);
+        ImGui::SliderFloat("t", &t, 0.0f, float(timeline->get_max_duration().count()) / 1000.0f);
+        ImGui::SliderFloat("x", &x, 0.0f, 1.0f);
+        ImGui::SliderFloat("y", &y, 0.0f, 1.0f);
+        ImGui::Checkbox("looped", &looped);
     }
     ImGui::End();
     gui.end();
