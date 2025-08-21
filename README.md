@@ -11,4 +11,4 @@ Loader for ofxTimeline but also provide scriptable interface
 
 ## Notes
 
-- Easy use of ofxTimeline, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D.
+- Easy use of ofxTimeline, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D, even without oF.
