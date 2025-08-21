@@ -12,3 +12,11 @@ Loader for ofxTimeline ( [original](https://github.com/YCAMInterlab/ofxTimeline)
 ## Notes
 
 - Easy use of ofxTimeline, I'll recommend [loaf_timeline](https://github.com/funatsufumiya/loaf_timeline). It can be used like Love2D, even without oF.
+
+## Dev notes
+
+- Portation from [timeline_rs](https://github.com/funatsufumiya/timeline_rs) was mostly done with GitHub Copilot. Already tested, but use with care.
+
+## License
+
+WTFPL or 0BSD
