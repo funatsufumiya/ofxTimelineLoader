@@ -12,8 +12,7 @@ Tested with oF v0.12.0.
 
 ## Dependencies
 
-- ofxEasing: https://github.com/arturoc/ofxEasing/
-    - NOTE: this makes problems on windows build now, so please use https://github.com/funatsufumiya/ofxEasing/ instead on windows.
+- [ofxEasing](https://github.com/funatsufumiya/ofxEasing/)
 
 ## Examples
 
